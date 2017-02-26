@@ -38,64 +38,70 @@ int main()
     do{
         printf("1 - Gerar Arquivo\n");
         printf("2 - Ordenar Arquivo\n");
-        printf("3 - Sair\n");
+        printf("4 - Sair\n");
         scanf("%d", &n);
 
         if (n == 1){
             geraNumeros(numeros, 10, 11);
             arquivo = fopen("numeros.txt", "w+");
             if (arquivo == NULL){
-                printf("!!! ERRO ao Tentar abrir o arquivo");
+                printf("!!! ERRO ao Tentar abrir o arquivo !!!\n\n");
             }
             for (i = 0; i < 10; i++){
                 fprintf(arquivo, "%d ", numeros[i]);
-                printf("%d\t", numeros[i]);
+                printf("%d ", numeros[i]);
             }
+            printf("\n");
+            fclose(arquivo);
         }else if (n == 2){
             // ### BUBBLES ###
             //BubbleSort(numeros,10);
             arquivo = fopen("BubbleSort.txt", "w+");
             if (arquivo == NULL){
-                printf("!!! ERRO ao Tentar abrir o arquivo");
+                printf("!!! ERRO ao Tentar abrir o arquivo !!!\n\n");
             }
             for (i = 0; i < 10; i++){
-                printf("%d\t", numeros[i]);
+                printf("%d ", numeros[i]);
             }
+            printf("\n");
             fclose(arquivo);
             // ### SELECTION ###
             //selection_sort(numeros,10);
             arquivo = fopen("SelectionSort.txt", "w+");
             if (arquivo == NULL){
-                printf("!!! ERRO ao Tentar abrir o arquivo");
+                printf("!!! ERRO ao Tentar abrir o arquivo !!!\n\n");
             }
             for (i = 0; i < 10; i++){
-                printf("%d\t", numeros[i]);
+                printf("%d ", numeros[i]);
             }
+            printf("\n");
             fclose(arquivo);
             // ### INSERTION ###
             //insertionSort(numeros,10);
             arquivo = fopen("InsertionSort.txt", "w+");
             if (arquivo == NULL){
-                printf("!!! ERRO ao Tentar abrir o arquivo");
+                printf("!!! ERRO ao Tentar abrir o arquivo !!!\n\n");
             }
             for (i = 0; i < 10; i++){
-                printf("%d\t", numeros[i]);
+                printf("%d ", numeros[i]);
             }
+            printf("\n");
             fclose(arquivo);
             // ### RADIX ###
             radixsort(numeros, 10);
             arquivo = fopen("RadixSort.txt", "w+");
             if (arquivo == NULL){
-                printf("!!! ERRO ao Tentar abrir o arquivo");
+                printf("!!! ERRO ao Tentar abrir o arquivo !!!\n\n");
             }
             for (i = 0; i < 10; i++){
-                printf("%d\t", numeros[i]);
+                printf("%d ", numeros[i]);
             }
+            printf("\n");
             fclose(arquivo);
         }
-        printf("Deseja Voltar ao Menu Principal ???");
+        printf("\n3 - Deseja Voltar ao Menu Principal ???\n\n");
         scanf("%d", &n);
-    }while(n == 4);
-    fclose(arquivo);
+    }while(n == 3);
+
     return 0;
 }
