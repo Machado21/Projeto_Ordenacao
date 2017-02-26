@@ -1,10 +1,3 @@
-/*
- * prototipos.c
- *
- *  Created on: 25 de fev de 2017
- *      Author: gabri
- */
-
 #include <stdlib.h>
 #include <stdio.h>
 #include "prototipos.h"

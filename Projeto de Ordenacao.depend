@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1488133281 source:c:\users\gabri\onedrive\documentos\ufrr\estrutura de dados i\projeto de ordenacao\prototipos.c
+	<stdlib.h>
+	<stdio.h>
+	"prototipos.h"
+
+1488133281 c:\users\gabri\onedrive\documentos\ufrr\estrutura de dados i\projeto de ordenacao\prototipos.h
+
+1488136278 source:c:\users\gabri\onedrive\documentos\ufrr\estrutura de dados i\projeto de ordenacao\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"prototipos.h"
+
