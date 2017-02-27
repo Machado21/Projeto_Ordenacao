@@ -66,7 +66,7 @@ void radixsort(int vetor[], int tamanho) {
 	int maior = vetor[0];
 	int exp = 1;
 
-	b = (int *) calloc(tamanho, sizeof(int));
+	b = (int *)calloc(tamanho, sizeof(int));
 
 	for (i = 0; i < tamanho; i++) {
 		if (vetor[i] > maior)
@@ -87,4 +87,54 @@ void radixsort(int vetor[], int tamanho) {
 	}
 
 	free(b);
+}
+// ### GERA ARQUIVO .TXT
+void geraArquivo()
+{
+	int i;
+	FILE* arquivo;
+	FILE* arquivo1;
+	FILE* arquivo2;
+	int numeros_100[100];
+	int numeros_1000[1000];
+	int numeros_10000[10000];
+	// ### 100 NUMEROS ###
+	geraNumeros(numeros_100, 100, 101);
+	arquivo = fopen("100_numeros.txt", "w");
+	if (arquivo == NULL) {
+		printf("!!! ERRO ao Tentar abrir o arquivo de escrita !!!\n\n");
+		exit(0);
+	}
+	for (i = 0; i < 100; i++) {
+		fprintf(arquivo, "%d ", numeros_100[i]);
+		printf("%d ", numeros_100[i]);
+	}
+	printf("\n");
+	fclose(arquivo);
+	// ### 1000 NUMEROS ###
+	geraNumeros(numeros_1000, 1000, 1001);
+	arquivo1 = fopen("1000_numeros.txt", "w+");
+	if (arquivo1 == NULL) {
+		printf("!!! ERRO ao Tentar abrir o arquivo !!!\n\n");
+		exit(0);
+	}
+	for (i = 0; i < 100; i++) {
+		fprintf(arquivo1, "%d ", numeros_1000[i]);
+		printf("%d ", numeros_1000[i]);
+	}
+	printf("\n");
+	fclose(arquivo1);
+	// ### 10000 NUMEROS ###
+	geraNumeros(numeros_10000, 10000, 10001);
+	arquivo2 = fopen("10000_numeros.txt", "w+");
+	if (arquivo2 == NULL) {
+		printf("!!! ERRO ao Tentar abrir o arquivo !!!\n\n");
+		exit(0);
+	}
+	for (i = 0; i < 10000; i++) {
+		fprintf(arquivo2, "%d ", numeros_10000[i]);
+		printf("%d ", numeros_10000[i]);
+	}
+	printf("\n");
+	fclose(arquivo2);
 }
