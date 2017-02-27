@@ -1,7 +1,9 @@
-void BubbleSort(int *vet , int n);
+void BubbleSort(int *vet, int n);
 
 void selection_sort(int num[], int tam);
 
-void insertionSort(int vetor[] , int tamanho);
+void insertionSort(int vetor[], int tamanho);
 
 void radixsort(int vetor[], int tamanho);
+
+void geraArquivo(int numeros[], int quantNumeros, int limite);
