@@ -34,7 +34,8 @@ int main()
 	int numeros_100[100];
 	int numeros_1000[1000];
 	int numeros_10000[10000];
-	//int numeros_100000[100000];
+	char numeros[10000];
+	char* numero;
 	FILE* arquivo;
 	//Menu Principal
 	printf("\n\t|| Projeto Ordenacao ||\n");
@@ -49,7 +50,7 @@ int main()
 		}
 		if (n == 1) {
 			// ### GERA ARQUIVO ###
-			geraArquivo;
+			geraArquivo();
 			printf("Arquivos Gerados com sucesso !!!");
 		}
 		else if (n == 2) {
@@ -61,8 +62,16 @@ int main()
 				system("pause");
 				exit(0);
 			}
-			for (i = 0; i < 100; i++) {
-				fscanf(arquivo, "%d", numeros_100[i]);	
+			numeros[0] = fgetc(arquivo);  //Pega do arquivo e coloca em um vetor de char bem grande 
+			for (i = 1; numeros[i-1] != EOF; i++) {
+				numeros[i] = fgetc(arquivo);
+			}
+			numeros[i-1] = '\0';   // Termina colocando um \0 no fim do vetor de char
+			numero = strtok(numeros, " ");  //Pegar numero a numero que esta como char 
+			for (i = 0; numero != NULL; i++)
+			{
+				numeros_100[i] = atoi(numero);  // E transforma em int
+				numero = strtok(NULL, " ");   // Pega um numero do vetor grande de char e coloca em um pequeno
 			}
 			// ### BUBBLES ###
 			//BubbleSort(numeros,10);
