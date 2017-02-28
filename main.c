@@ -62,16 +62,16 @@ int main()
 				system("pause");
 				exit(0);
 			}
-			numeros[0] = fgetc(arquivo);  //Pega do arquivo e coloca em um vetor de char bem grande 
+			numeros[0] = fgetc(arquivo);
 			for (i = 1; numeros[i-1] != EOF; i++) {
 				numeros[i] = fgetc(arquivo);
 			}
-			numeros[i-1] = '\0';   // Termina colocando um \0 no fim do vetor de char
-			numero = strtok(numeros, " ");  //Pegar numero a numero que esta como char 
+			numeros[i-1] = '\0';
+			numero = strtok(numeros, " ");
 			for (i = 0; numero != NULL; i++)
 			{
-				numeros_100[i] = atoi(numero);  // E transforma em int
-				numero = strtok(NULL, " ");   // Pega um numero do vetor grande de char e coloca em um pequeno
+				numeros_100[i] = atoi(numero);
+				numero = strtok(NULL, " ");
 			}
 			// ### BUBBLES ###
 			//BubbleSort(numeros,10);
@@ -115,9 +115,9 @@ int main()
 			if (arquivo == NULL) {
 				printf("!!! ERRO ao Tentar abrir o arquivo !!!\n\n");
 			}
-			for (i = 0; i < 10; i++) {
-				//fprintf(arquivo, "%d ", numeros[i]);
-				//printf("%d ", numeros[i]);
+			for (i = 0; i < 100; i++) {
+				fprintf(arquivo, "%d ", numeros_100[i]);
+				printf("%d ", numeros_100[i]);
 			}
 			printf("\n");
 			fclose(arquivo);
